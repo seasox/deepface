@@ -747,7 +747,7 @@ def represent(
         if isinstance(model, Model):
             # model.predict causes memory issue when it is called in a for loop
             # embedding = model.predict(img, verbose=0)[0].tolist()
-            embedding = model(img, training=False).numpy()[0].tolist()
+            embedding = model(img, training=False, verbose=0).numpy()[0].tolist()
             # if you still get verbose logging. try call
             # - `tf.keras.utils.disable_interactive_logging()`
             # in your main program
